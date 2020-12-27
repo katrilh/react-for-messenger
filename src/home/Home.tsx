@@ -1,18 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
-import { Box, Heading, Text } from "rebass/styled-components";
+import { Box, Heading } from "rebass/styled-components";
 import GraphWrapper from "./GraphWrapper";
 import { theme } from "./theme";
-
-const getData = (path = "dummydata") => require(`./${path}.json`);
+import { intialLoadAll } from "./utils";
+import { FbMessageObject } from "./types";
 
 const Home = () => {
-  const [data, setData] = useState(undefined);
+  const [allData, setAllData] = useState<FbMessageObject>();
   useEffect(() => {
-    if (!data) {
-      setData(getData());
+    if (!allData) {
+      setAllData(intialLoadAll());
     }
-  }, []);
+  });
+  console.log(allData && Object.keys(allData));
+  console.log(allData);
 
   return (
     <ThemeProvider theme={theme}>
