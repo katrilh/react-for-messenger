@@ -1,9 +1,12 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
+import { ThemeProvider } from "styled-components";
+import { Box, Heading, Text } from "rebass/styled-components";
+import GraphWrapper from "./GraphWrapper";
+import { theme } from "./theme";
 
 const getData = (path = "dummydata") => require(`./${path}.json`);
-const Home = () => {
-  const [numb, setNumb] = useState(0);
 
+const Home = () => {
   const [data, setData] = useState(undefined);
   useEffect(() => {
     if (!data) {
@@ -12,12 +15,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Main content</h1>
-      <p>Counter: {numb}</p>
-      <button onClick={() => setNumb(numb + 1)}>click me</button>
-      {console.log("data", data)}
-    </div>
+    <ThemeProvider theme={theme}>
+      <Box p={5} fontSize={2} width={[1, 1, 1 / 2]} variant="box.outline">
+        <Heading>Data data data</Heading>
+        <GraphWrapper />
+      </Box>
+    </ThemeProvider>
   );
 };
 
