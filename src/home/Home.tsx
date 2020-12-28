@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     <ThemeProvider theme={theme}>
-      <Box p={5} fontSize={2} width={[1, 1, 1 / 2]} variant="box.outline">
+      <Box fontSize={2} margin="auto" width="80%">
         <Heading>Data data data</Heading>
         <GraphWrapper />
       </Box>
