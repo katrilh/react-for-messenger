@@ -20,3 +20,7 @@ export interface FbMessage {
   date: Date;
   type: string;
 }
+export interface DataObject {
+  [key: string]: string | number;
+}
+[];

@@ -6,7 +6,9 @@ const chats: string[] = [
   "AsmundAqissiaqKlovstad_dvdpmcXrzw",
   "bitByteBitwGSHN_ofRkY94row",
   "dickallcock_CEcxw9nKIA",
+  "MELONPAN_jG-5bu0lAw",
   "MiriamFinjord_wioVTCMHTg",
+  "MMIgruppe19_REF_pDDpag",
   "OivindAlbrigtsen_LDoG2ODG6A",
 ];
 
