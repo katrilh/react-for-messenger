@@ -1600,7 +1600,7 @@
     lodash "^4.17.11"
     react-spring "9.0.0-rc.3"
 
-"@nivo/axes@0.67.0":
+"@nivo/axes@0.67.0", "@nivo/axes@^0.67.0":
   version "0.67.0"
   resolved "https://registry.yarnpkg.com/@nivo/axes/-/axes-0.67.0.tgz#5892a8c90f782e478015865f779b62f2e74b7665"
   integrity sha512-csqEgFoJQGoB5/TDSy7SXCy/2QSdrfSa51AMU/RhzpnZ35wNO/zHkEfP+ApvB8nuuwVuBNOShio80PNZOOD+Og==
@@ -1656,6 +1656,17 @@
     react-spring "9.0.0-rc.3"
     recompose "^0.30.0"
     resize-observer-polyfill "^1.5.1"
+
+"@nivo/heatmap@^0.67.0":
+  version "0.67.0"
+  resolved "https://registry.yarnpkg.com/@nivo/heatmap/-/heatmap-0.67.0.tgz#49eccc50771b9c56aa4e6820ab7775cad4793daa"
+  integrity sha512-dKZmbNuN79/kspjFW3Z3reW7IhVXtcC79LxD8LB5+lZm8ql5dVVzp9ZsIsw/+ZTk1Y6fpDaPhW71waGQM7Fvpg==
+  dependencies:
+    "@nivo/axes" "0.67.0"
+    "@nivo/colors" "0.67.0"
+    "@nivo/tooltip" "0.67.0"
+    d3-scale "^3.0.0"
+    react-spring "9.0.0-rc.3"
 
 "@nivo/legends@0.67.0":
   version "0.67.0"

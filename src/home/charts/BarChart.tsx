@@ -1,6 +1,7 @@
 import React from "react";
 import { IndexByFunc, ResponsiveBar } from "@nivo/bar";
 import { DataObject } from "../types";
+import { axiesDefault } from "./consts";
 
 interface BarChartProps {
   data: DataObject[];
@@ -10,13 +11,7 @@ interface BarChartProps {
   yLabel?: string;
 }
 
-const BarChart = ({
-  data,
-  keys,
-  indexBy,
-  xLabel,
-  yLabel = "Count",
-}: BarChartProps) => (
+const BarChart = ({ data, keys, indexBy, xLabel, yLabel }: BarChartProps) => (
   <div style={{ height: 350, width: "100%" }}>
     <ResponsiveBar
       data={data}
@@ -28,59 +23,9 @@ const BarChart = ({
       indexScale={{ type: "band", round: true }}
       colors={{ scheme: "nivo" }}
       groupMode="grouped"
-      defs={[
-        {
-          id: "dots",
-          type: "patternDots",
-          background: "inherit",
-          color: "#38bcb2",
-          size: 4,
-          padding: 1,
-          stagger: true,
-        },
-        {
-          id: "lines",
-          type: "patternLines",
-          background: "inherit",
-          color: "#eed312",
-          rotation: -45,
-          lineWidth: 6,
-          spacing: 10,
-        },
-      ]}
-      // fill={[
-      //   {
-      //     match: {
-      //       id: "fries",
-      //     },
-      //     id: "dots",
-      //   },
-      //   {
-      //     match: {
-      //       id: "sandwich",
-      //     },
-      //     id: "lines",
-      //   },
-      // ]}
       borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-      axisTop={null}
-      axisRight={null}
-      axisBottom={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: [xLabel],
-        legendPosition: "middle",
-        legendOffset: 32,
-      }}
-      axisLeft={{
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: [yLabel],
-        legendPosition: "middle",
-        legendOffset: -40,
-      }}
+      axisBottom={axiesDefault(xLabel)}
+      axisLeft={axiesDefault(yLabel)}
       labelSkipWidth={12}
       labelSkipHeight={12}
       labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
@@ -109,8 +54,6 @@ const BarChart = ({
         },
       ]}
       animate={false}
-      motionStiffness={90}
-      motionDamping={15}
     />
   </div>
 );

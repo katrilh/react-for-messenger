@@ -24,3 +24,8 @@ export interface DataObject {
   [key: string]: string | number;
 }
 [];
+
+export interface DataAndKey {
+  data: DataObject[];
+  keys: string[];
+}

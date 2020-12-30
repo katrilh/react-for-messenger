@@ -2,19 +2,14 @@ import React from "react";
 import { Box, Text, Card } from "rebass/styled-components";
 import BarChart from "./charts/BarChart";
 import LineChart from "./charts/Linechart";
-import { dummyBarData, dummyKeys, dummyLineData } from "./dummydata";
-import { DataObject, FbMessage } from "./types";
+// import { dummyBarData, dummyKeys, dummyLineData } from "./dummydata";
+import { DataAndKey, DataObject, FbMessage } from "./types";
 
 interface GraphWrapperProps {
   msgData: FbMessage[];
 }
 
-interface BarDataAndKey {
-  data: DataObject[];
-  keys: string[];
-}
-
-const formatBarData = (msgs: FbMessage[]): BarDataAndKey => {
+const formatBarData = (msgs: FbMessage[]): DataAndKey => {
   let byYear: Record<number, Record<string, number>> = {};
   let keys = new Set<string>();
 

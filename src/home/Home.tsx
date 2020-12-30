@@ -4,7 +4,7 @@ import { Box, Heading } from "rebass/styled-components";
 import { Label, Select } from "@rebass/forms";
 import GraphWrapper from "./GraphWrapper";
 import { theme } from "./theme";
-import { intialLoadAll } from "./utils";
+import { intialLoadAll } from "./fileloader";
 import { FbMessageObject } from "./types";
 
 const Home = () => {
@@ -36,6 +36,7 @@ const Home = () => {
             <option key={idx}>{e}</option>
           ))}
         </Select>
+        {/*@babel/plugin-proposal-optional-chaining  */}
         {allData && allData[currentChat] && (
           <GraphWrapper msgData={allData[currentChat]} />
         )}
