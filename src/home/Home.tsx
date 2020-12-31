@@ -36,7 +36,6 @@ const Home = () => {
             <option key={idx}>{e}</option>
           ))}
         </Select>
-        {/*@babel/plugin-proposal-optional-chaining  */}
         {allData && allData[currentChat] && (
           <GraphWrapper msgData={allData[currentChat]} />
         )}
