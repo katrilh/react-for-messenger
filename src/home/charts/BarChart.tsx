@@ -1,9 +1,16 @@
 import React from "react";
 import { IndexByFunc, ResponsiveBar } from "@nivo/bar";
+import { Heading } from "rebass/styled-components";
 import { DataObject } from "../types";
-import { axiesDefault } from "./consts";
+import {
+  axiesDefault,
+  CHART_HEIGHT,
+  legendDefaults,
+  margindefault,
+} from "./consts";
 
 interface BarChartProps {
+  title?: string;
   data: DataObject[];
   keys?: string[];
   indexBy?: string | IndexByFunc;
@@ -11,38 +18,35 @@ interface BarChartProps {
   yLabel?: string;
 }
 
-const BarChart = ({ data, keys, indexBy, xLabel, yLabel }: BarChartProps) => (
-  <div style={{ height: 350, width: "100%" }}>
+const BarChart = ({
+  title,
+  data,
+  keys,
+  indexBy,
+  xLabel,
+  yLabel,
+}: BarChartProps) => (
+  <div style={{ height: CHART_HEIGHT, width: "100%" }}>
+    <Heading>{title}</Heading>
     <ResponsiveBar
       data={data}
       keys={keys}
       indexBy={indexBy}
-      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+      margin={margindefault}
       padding={0.3}
-      valueScale={{ type: "linear" }}
-      indexScale={{ type: "band", round: true }}
-      colors={{ scheme: "nivo" }}
+      colors={{ scheme: "dark2" }}
       groupMode="grouped"
-      borderColor={{ from: "color", modifiers: [["darker", 1.6]] }}
-      axisBottom={axiesDefault(xLabel)}
-      axisLeft={axiesDefault(yLabel)}
+      axisBottom={axiesDefault(xLabel, 36)}
+      axisLeft={axiesDefault(yLabel, -40)}
       labelSkipWidth={12}
       labelSkipHeight={12}
-      labelTextColor={{ from: "color", modifiers: [["darker", 1.6]] }}
       legends={[
         {
+          ...legendDefaults(),
           dataFrom: "keys",
-          anchor: "bottom-right",
-          direction: "column",
-          justify: false,
-          translateX: 120,
-          translateY: 0,
-          itemsSpacing: 2,
-          itemWidth: 100,
-          itemHeight: 20,
-          itemDirection: "left-to-right",
-          itemOpacity: 0.85,
-          symbolSize: 20,
+          symbolSize: 18,
+          itemsSpacing: 14,
+
           effects: [
             {
               on: "hover",

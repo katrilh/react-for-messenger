@@ -1,15 +1,26 @@
 import React from "react";
 import { ResponsiveLine, Serie } from "@nivo/line";
+import {
+  axiesDefault,
+  margindefault,
+  legendDefaults,
+  CHART_HEIGHT,
+} from "./consts";
+import { Heading } from "rebass/styled-components";
 
 interface LineChartProps {
+  title?: string;
   data: Serie[];
+  xLabel?: string;
+  yLabel?: string;
 }
 
-const LineChart = ({ data }: LineChartProps) => (
-  <div style={{ height: 500, width: 1000 }}>
+const LineChart = ({ title, data, xLabel, yLabel }: LineChartProps) => (
+  <div style={{ height: CHART_HEIGHT, width: "100%" }}>
+    <Heading>{title}</Heading>
     <ResponsiveLine
       data={data}
-      margin={{ top: 50, right: 110, bottom: 50, left: 60 }}
+      margin={margindefault}
       xScale={{ type: "point" }}
       yScale={{
         type: "linear",
@@ -18,46 +29,20 @@ const LineChart = ({ data }: LineChartProps) => (
         stacked: true,
         reverse: false,
       }}
-      yFormat=" >-.2f"
-      axisTop={null}
-      axisRight={null}
-      axisBottom={{
-        orient: "bottom",
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: "transportation",
-        legendOffset: 36,
-        legendPosition: "middle",
-      }}
-      axisLeft={{
-        orient: "left",
-        tickSize: 5,
-        tickPadding: 5,
-        tickRotation: 0,
-        legend: "count",
-        legendOffset: -40,
-        legendPosition: "middle",
-      }}
-      pointSize={10}
-      pointColor={{ theme: "background" }}
+      curve="monotoneX"
+      useMesh
+      colors={{ scheme: "dark2" }}
+      yFormat=" >-"
+      axisBottom={axiesDefault(xLabel, 36)}
+      axisLeft={axiesDefault(yLabel, -40)}
+      pointSize={5}
       pointBorderWidth={2}
       pointBorderColor={{ from: "serieColor" }}
-      pointLabelYOffset={-12}
-      useMesh={true}
       legends={[
         {
-          anchor: "bottom-right",
-          direction: "column",
-          justify: false,
-          translateX: 100,
-          translateY: 0,
-          itemsSpacing: 0,
-          itemDirection: "left-to-right",
-          itemWidth: 80,
-          itemHeight: 20,
-          itemOpacity: 0.75,
+          ...legendDefaults(),
           symbolSize: 12,
+          itemDirection: "top-to-bottom",
           symbolShape: "circle",
           symbolBorderColor: "rgba(0, 0, 0, .5)",
           effects: [
@@ -71,6 +56,7 @@ const LineChart = ({ data }: LineChartProps) => (
           ],
         },
       ]}
+      animate={false}
     />
   </div>
 );

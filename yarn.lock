@@ -1668,7 +1668,7 @@
     d3-scale "^3.0.0"
     react-spring "9.0.0-rc.3"
 
-"@nivo/legends@0.67.0":
+"@nivo/legends@0.67.0", "@nivo/legends@^0.67.0":
   version "0.67.0"
   resolved "https://registry.yarnpkg.com/@nivo/legends/-/legends-0.67.0.tgz#9cbe99d8929c6addafd8253f65b7e040d9d4bb6c"
   integrity sha512-W6JWMSiiAPsDhuofwq7x3ERA2fFJ2J/aj+Y3lvrZh5OAsG6/PCljwhlhMklNgYoN6bT/+Jgtut3Agdl0Dlzspg==

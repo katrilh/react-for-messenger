@@ -1,20 +1,23 @@
-import { IndexByFunc, ResponsiveHeatMap } from "@nivo/heatmap";
+import { ResponsiveHeatMap } from "@nivo/heatmap";
+import { Heading } from "rebass/styled-components";
 import { DataObject } from "../types";
+import { CHART_HEIGHT, margindefault } from "./consts";
 
 interface HeatMapProps {
+  title?: string;
   data: DataObject[];
   keys?: string[];
-  minValue?: number;
 }
 
-const HeatMap = ({ data, keys, minValue }: HeatMapProps) => (
-  <div style={{ height: 350, width: "100%" }}>
+const HeatMap = ({ title, data, keys }: HeatMapProps) => (
+  <div style={{ height: CHART_HEIGHT, width: "100%" }}>
+    <Heading>{title}</Heading>
     <ResponsiveHeatMap
       data={data}
       keys={keys}
-      margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
+      margin={margindefault}
       padding={0.3}
-      minValue={minValue}
+      colors="RdPu"
       axisTop={{
         orient: "top",
         tickSize: 5,
@@ -32,6 +35,7 @@ const HeatMap = ({ data, keys, minValue }: HeatMapProps) => (
         legendPosition: "middle",
         legendOffset: -40,
       }}
+      hoverTarget="cell"
       animate={false}
     />
   </div>
