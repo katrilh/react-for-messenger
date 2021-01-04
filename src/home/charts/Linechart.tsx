@@ -32,6 +32,9 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
     legends={[
       {
         ...legendDefaults(),
+        anchor: "top-right",
+        direction: "row",
+        translateX: 0,
         symbolSize: 12,
         itemDirection: "top-to-bottom",
         symbolShape: "circle",

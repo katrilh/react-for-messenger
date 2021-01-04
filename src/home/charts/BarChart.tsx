@@ -22,8 +22,8 @@ const BarChart = ({ data, keys, indexBy, xLabel, yLabel }: BarChartProps) => (
     groupMode="grouped"
     axisBottom={axiesDefault(xLabel, 36)}
     axisLeft={axiesDefault(yLabel, -40)}
-    labelSkipWidth={15}
-    labelSkipHeight={12}
+    labelSkipWidth={20}
+    labelSkipHeight={10}
     legends={[
       {
         ...legendDefaults(),
