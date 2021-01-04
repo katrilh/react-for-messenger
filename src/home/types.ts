@@ -32,6 +32,12 @@ export interface DataAndKey {
   keys: string[];
 }
 
+export interface PieChartObject {
+  id: string;
+  label: string;
+  value: number;
+}
+
 export interface GraphWrapperCache {
   [key: string]: CacheFields;
 }
@@ -40,4 +46,5 @@ export interface CacheFields {
   bar: DataAndKey;
   line: Serie[];
   heat: DataAndKey;
+  pie: PieChartObject[];
 }

@@ -1,7 +1,7 @@
 import { Serie } from "@nivo/line";
 import { dayHourInit } from "./charts/consts";
 import { monthNames } from "./consts";
-import { FbMessage, DataAndKey, DataObject } from "./types";
+import { FbMessage, DataAndKey, DataObject, PieChartObject } from "./types";
 
 export const range = (start: number, stop: number, step: number = 1) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
@@ -45,11 +45,9 @@ export const formatTimeData = (msgs: FbMessage[]): [Serie[], DataAndKey] => {
     if (!byYear[sendYear]) {
       byYear[sendYear] = {};
     }
-    if (!byYear[sendYear][sendMonth]) {
-      byYear[sendYear][sendMonth] = 1;
-    } else {
-      byYear[sendYear][sendMonth]++;
-    }
+    byYear[sendYear][sendMonth]
+      ? byYear[sendYear][sendMonth]++
+      : (byYear[sendYear][sendMonth] = 1);
 
     byDay[date.toLocaleDateString(undefined, { weekday: "short" })][
       date.getHours()
@@ -74,6 +72,22 @@ export const formatTimeData = (msgs: FbMessage[]): [Serie[], DataAndKey] => {
     monthByYear.push(temp);
   }
   return [monthByYear, { data: hourByDay, keys: range(0, 23).map(String) }];
+};
+
+export const formatPieChartData = (msgs: FbMessage[]): PieChartObject[] => {
+  const byType: Record<string, number> = {};
+  msgs.map(({ type }) => {
+    byType[type] ? byType[type]++ : (byType[type] = 1);
+  });
+  const typeAsPie: PieChartObject[] = [];
+  for (const type in byType) {
+    typeAsPie.push({
+      id: type,
+      label: type,
+      value: byType[type],
+    });
+  }
+  return typeAsPie;
 };
 
 export const formatTotal = (total: number): string => {

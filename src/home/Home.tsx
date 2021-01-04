@@ -21,7 +21,7 @@ const Home = () => {
   }, [allData]);
   return (
     <ThemeProvider theme={theme}>
-      <Box fontSize={2} margin="auto" width="80%">
+      <Box fontSize={2} px={4} margin="auto" width="90%" bg="whitesmoke">
         <Heading>Pick a chat</Heading>
         <Select
           id="chat-select"

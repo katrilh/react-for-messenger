@@ -13,6 +13,7 @@ const HeatMap = ({ data, keys }: HeatMapProps) => (
     keys={keys}
     margin={margindefault}
     padding={0.3}
+    enableLabels={false}
     colors="RdPu"
     axisTop={{
       orient: "top",
@@ -30,6 +31,15 @@ const HeatMap = ({ data, keys }: HeatMapProps) => (
       legend: "",
       legendPosition: "middle",
       legendOffset: -40,
+    }}
+    axisRight={{
+      orient: "left",
+      tickSize: 5,
+      tickPadding: 5,
+      tickRotation: 0,
+      legend: "",
+      legendPosition: "middle",
+      legendOffset: 40,
     }}
     hoverTarget="cell"
     animate={false}

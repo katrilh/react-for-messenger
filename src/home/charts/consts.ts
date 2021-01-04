@@ -11,10 +11,11 @@ export const margindefault: Margin = {
 };
 
 export const legendDefaults = (): LegendProps => ({
-  anchor: "top-left",
-  direction: "row",
+  anchor: "right",
+  direction: "column",
+  symbolSize: 18,
   justify: false,
-  translateX: 0,
+  translateX: -20,
   translateY: -35,
   itemsSpacing: 0.3,
   itemOpacity: 0.8,
