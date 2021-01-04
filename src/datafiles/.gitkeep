@@ -1,0 +1,19 @@
+Put all facebook msg folders in this folder
+
+You can run this python script to get a list of all folders 
+which can be put into `fileloader.ts`
+
+
+import os
+# You will get the full list in alldirs.txt,
+# just remove that file itself and this one (helperfile.py),
+# and youre good to go
+
+def main():
+    names = os.listdir('src/datafiles')
+    with open("src/datafiles/alldirs.txt", "w") as f:
+        for n in names:
+            f.write(f"'{n}', \n")
+
+if __name__ == '__main__':
+    main()

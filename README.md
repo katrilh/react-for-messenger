@@ -2,36 +2,20 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Running the App
 
-In the project directory, you can run:
+For developing the app, run `yarn start` and go to [localhost:3000](http://localhost:3000)
+If you are loading a chat with more than 50k messages, the nivo library might be a bit slow to render.
 
-### `yarn start`
+Lint errors will show up in the console, sometimes prevent you from loading the app.
+If you cannot fix it, or just add `// @ts-ignore` over the line, but do keep this as a last resort
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Other commands
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+As this project was created with "Create React App", scripts for testing (`yarn test`), bulding (`yarn build`)
+and ejecting (`yarn eject`).
 
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+**Note: Ejecting is a one-way operation. Once you `eject`, you can’t go back!**
 
 If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
@@ -39,8 +23,13 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
+## Libraries
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### UI - Rebass
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+This project uses [Rebass](https://rebassjs.org/getting-started) as its UI library, see their pages for how to use and style components.
+For now, when picking a componet, import it from `rebass/styled-components` (not just `rebass`)
+
+### Graphs- Nivo
+
+This project uses [Nivo](https://nivo.rocks/components) as its graph library, see their pages for how to use and style and format data.

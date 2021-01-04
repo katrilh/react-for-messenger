@@ -9,20 +9,21 @@ import { formatTimeData, formatPersonYearBar, formatTotal } from "./utils";
 
 interface GraphWrapperProps {
   msgData: FbMessage[];
-  chatKey: string;
+  // chatKey: string;
 }
+// TODO: add some sort of load cashing
 
-const loadedChats: Record<string, any> = {};
+// const loadedChats: Record<string, any> = {};
 
-const addChat = (chatKey: string) => (loadedChats[chatKey] = "added");
+// const addChat = (chatKey: string) => (loadedChats[chatKey] = "added");
 
-const GraphWrapper = ({ msgData, chatKey }: GraphWrapperProps) => {
+const GraphWrapper = ({ msgData /*, chatKey*/ }: GraphWrapperProps) => {
   const [heatmap, linechart] = formatTimeData(msgData);
-  useEffect(() => {
-    if (!loadedChats.chatKey) {
-      addChat(chatKey);
-    }
-  }, [chatKey]);
+  // useEffect(() => {
+  //   if (!loadedChats.chatKey) {
+  //     addChat(chatKey);
+  //   }
+  // }, [chatKey]);
   return (
     <Card padding={4} width={"100%"} height="90%">
       <Box {...charBoxDefaults}>

@@ -1,23 +1,6 @@
 import { FbMessage, FbMessageObject, RawFbFile, RawFbMessage } from "./types";
 
-const chats: string[] = [
-  "adamgaidi_xxly7ve1kw",
-  "andershovden_l68rdhhhya",
-  "asmundaqissiaqklovstad_dvdpmcxrzw",
-  "bitbytebitwgshn_ofrky94row",
-  "dickallcock_cecxw9nkia",
-  "henriettekoolen_0dynefwwog",
-  "melonpan_jg-5bu0law",
-  "miriamfinjord_wiovtcmhtg",
-  "oivindalbrigtsen_ldog2odg6a",
-  "semiprostrippers_90wc6tyxpw",
-  "soft_uvo_rcmpka",
-  "speedyblubblubdiblubandfast_6i19ka21va",
-  "theatokstad_ekxqyivyja",
-  "thebestamongus_8kghvj9pww",
-  "xcom19_tq6epsbhpq",
-  "xcomtur_4q_1rvzshg",
-];
+const chats: string[] = [];
 
 const importDataFromFile = (chat: string, idx = 1) => {
   let content: RawFbFile = require(`../datafiles/${chat}/message_${idx}.json`);
