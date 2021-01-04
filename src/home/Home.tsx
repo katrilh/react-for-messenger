@@ -35,9 +35,7 @@ const Home = () => {
           ))}
         </Select>
         {allData && allData[currentChat] && (
-          <GraphWrapper
-            msgData={allData[currentChat]} /*chatKey={currentChat}*/
-          />
+          <GraphWrapper msgData={allData[currentChat]} chatKey={currentChat} />
         )}
       </Box>
     </ThemeProvider>

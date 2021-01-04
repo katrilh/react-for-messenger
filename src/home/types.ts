@@ -1,3 +1,5 @@
+import { Serie } from "@nivo/line";
+
 export interface RawFbFile {
   participants: {
     name: string;
@@ -28,4 +30,14 @@ export interface DataObject {
 export interface DataAndKey {
   data: DataObject[];
   keys: string[];
+}
+
+export interface GraphWrapperCache {
+  [key: string]: CacheFields;
+}
+export interface CacheFields {
+  len: string;
+  bar: DataAndKey;
+  line: Serie[];
+  heat: DataAndKey;
 }
