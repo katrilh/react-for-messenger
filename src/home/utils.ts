@@ -33,7 +33,7 @@ export const formatPersonYearBar = (msgs: FbMessage[]): DataAndKey => {
   return { data: personByYear, keys: Array.from(keys) };
 };
 
-export const formatTimeData = (msgs: FbMessage[]): [DataAndKey, Serie[]] => {
+export const formatTimeData = (msgs: FbMessage[]): [Serie[], DataAndKey] => {
   const byDay = dayHourInit();
   const byYear: Record<number, Record<number, number>> = {};
 
@@ -73,7 +73,7 @@ export const formatTimeData = (msgs: FbMessage[]): [DataAndKey, Serie[]] => {
     }
     monthByYear.push(temp);
   }
-  return [{ data: hourByDay, keys: range(0, 23).map(String) }, monthByYear];
+  return [monthByYear, { data: hourByDay, keys: range(0, 23).map(String) }];
 };
 
 export const formatTotal = (total: number): string => {

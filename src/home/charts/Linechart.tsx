@@ -19,7 +19,7 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
       stacked: false,
       reverse: false,
     }}
-    curve="cardinal"
+    curve="monotoneX"
     useMesh
     colors={{ scheme: "dark2" }}
     yFormat=" >-"
