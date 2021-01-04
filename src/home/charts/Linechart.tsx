@@ -23,8 +23,8 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
     useMesh
     colors={{ scheme: "dark2" }}
     yFormat=" >-"
-    axisBottom={axiesDefault(xLabel, 36)}
-    axisLeft={axiesDefault(yLabel, -40)}
+    // axisBottom={axiesDefault(xLabel, 36)}
+    // axisLeft={axiesDefault(yLabel, -40)}
     pointSize={5}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
