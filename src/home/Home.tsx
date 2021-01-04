@@ -22,9 +22,7 @@ const Home = () => {
   return (
     <ThemeProvider theme={theme}>
       <Box fontSize={2} margin="auto" width="80%">
-        <Heading>Data data data</Heading>
-
-        <Label htmlFor="chat-select">Pick a chat</Label>
+        <Heading>Pick a chat</Heading>
         <Select
           id="chat-select"
           width="8o%"
@@ -37,7 +35,7 @@ const Home = () => {
           ))}
         </Select>
         {allData && allData[currentChat] && (
-          <GraphWrapper msgData={allData[currentChat]} />
+          <GraphWrapper msgData={allData[currentChat]} chatKey={currentChat} />
         )}
       </Box>
     </ThemeProvider>

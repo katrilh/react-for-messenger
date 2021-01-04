@@ -62,7 +62,6 @@ export const formatTimeData = (msgs: FbMessage[]): [DataAndKey, Serie[]] => {
     byDay[day]["id"] = day;
     hourByDay.push(byDay[day]);
   }
-
   const monthByYear: Serie[] = [];
   for (const year in byYear) {
     let temp: Serie = { id: year, data: new Array(12) };
@@ -75,4 +74,16 @@ export const formatTimeData = (msgs: FbMessage[]): [DataAndKey, Serie[]] => {
     monthByYear.push(temp);
   }
   return [{ data: hourByDay, keys: range(0, 23).map(String) }, monthByYear];
+};
+
+export const formatTotal = (total: number): string => {
+  const temp = total.toString().split("").reverse().join("");
+  let tot = "";
+  for (let i = 0; i < temp.length; i++) {
+    if (i % 3 === 0) {
+      tot = " " + tot;
+    }
+    tot = temp[i] + tot;
+  }
+  return tot;
 };

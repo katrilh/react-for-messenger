@@ -16,10 +16,10 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
       type: "linear",
       min: "auto",
       max: "auto",
-      stacked: true,
+      stacked: false,
       reverse: false,
     }}
-    curve="monotoneX"
+    curve="cardinal"
     useMesh
     colors={{ scheme: "dark2" }}
     yFormat=" >-"
@@ -28,6 +28,7 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
     pointSize={5}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
+    enableSlices="x"
     legends={[
       {
         ...legendDefaults(),
