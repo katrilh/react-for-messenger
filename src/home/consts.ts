@@ -26,7 +26,6 @@ export const monthNames: string[] = [
 ];
 
 export const charBoxDefaults = {
-  p: 0,
   height: 330,
   width: "100%",
   my: "10px",
@@ -39,8 +38,9 @@ const PieChartDefault: PieChartObject = { id: "", label: "", value: 0 };
 
 export const cacheFieldsDefaults: CacheFields = {
   len: "",
-  bar: DataAndKeyDefault,
+  pers: DataAndKeyDefault,
   line: [],
   heat: DataAndKeyDefault,
   pie: [PieChartDefault],
+  days: DataAndKeyDefault,
 };

@@ -101,3 +101,41 @@ export const formatTotal = (total: number): string => {
   }
   return tot;
 };
+
+const daysArray = (days: number): number[] => new Array(days).fill(0);
+const isLeapYear = (year: number): boolean =>
+  (year & 3) == 0 && (year % 25 != 0 || (year & 15) == 0);
+
+const dayNo = (y: number, m: number, d: number): number =>
+  --m * 31 -
+  (m > 1
+    ? ((1054267675 >> (m * 3 - 6)) & 7) -
+      (y & 3 || (!(y % 25) && y & 15) ? 0 : 1)
+    : 0) +
+  d;
+
+export const formatDayByYear = (msgs: FbMessage[]): DataAndKey => {
+  const textingDays: Record<number, number[]> = {};
+  msgs.map(({ date }) => {
+    const year = date.getFullYear();
+    if (!textingDays[year]) {
+      textingDays[year] = isLeapYear(year) ? daysArray(366) : daysArray(365);
+    }
+    const month = date.getMonth() + 1;
+    const day = date.getDate();
+    const idx = dayNo(year, month, day) - 1;
+    textingDays[year][idx]++;
+  });
+  const daysByYear: DataObject[] = [];
+  const keys: string[] = [];
+
+  for (const year in textingDays) {
+    daysByYear.push({
+      id: year,
+      [year]: textingDays[year].filter(Boolean).length,
+    });
+    keys.push(year);
+  }
+
+  return { data: daysByYear, keys };
+};

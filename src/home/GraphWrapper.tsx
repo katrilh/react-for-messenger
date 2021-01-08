@@ -17,6 +17,7 @@ import {
   formatPersonYearBar,
   formatTotal,
   formatPieChartData,
+  formatDayByYear,
 } from "./utils";
 
 interface GraphWrapperProps {
@@ -29,21 +30,23 @@ const loadedChats: GraphWrapperCache = {};
 const addChat = (
   chatKey: string,
   len: string,
-  bar: DataAndKey,
+  pers: DataAndKey,
   line: Serie[],
   heat: DataAndKey,
-  pie: PieChartObject[]
-) => (loadedChats[chatKey] = { len, bar, line, heat, pie });
+  pie: PieChartObject[],
+  days: DataAndKey
+) => (loadedChats[chatKey] = { len, pers, line, heat, pie, days });
 
 const GraphWrapper = ({ msgData, chatKey }: GraphWrapperProps) => {
   const [currentData, setCurrentData] = useState(cacheFieldsDefaults);
   useEffect(() => {
     if (!loadedChats[chatKey]) {
       const len = formatTotal(msgData.length);
-      const bar = formatPersonYearBar(msgData);
+      const pers = formatPersonYearBar(msgData);
       const [line, heat] = formatTimeData(msgData);
       const pie = formatPieChartData(msgData);
-      addChat(chatKey, len, bar, line, heat, pie);
+      const days = formatDayByYear(msgData);
+      addChat(chatKey, len, pers, line, heat, pie, days);
     }
     setCurrentData(loadedChats[chatKey]);
   }, [chatKey]);
@@ -52,7 +55,6 @@ const GraphWrapper = ({ msgData, chatKey }: GraphWrapperProps) => {
       padding={2}
       width={"100%"}
       height="90%"
-      bg="whitesmoke"
       sx={{
         display: "grid",
         gridGap: 3,
@@ -73,11 +75,15 @@ const GraphWrapper = ({ msgData, chatKey }: GraphWrapperProps) => {
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary"> Texts per person</Heading>
-        <BarChart {...currentData.bar} />
+        <BarChart groupMode="grouped" {...currentData.pers} />
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary">Texts sent by day and hour</Heading>
         <HeatMap {...currentData.heat} />
+      </Card>
+      <Card {...charBoxDefaults}>
+        <Heading color="secondary"> Days with texts per year</Heading>
+        <BarChart legend={false} {...currentData.days} />
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary">Texts types sent</Heading>

@@ -43,8 +43,9 @@ export interface GraphWrapperCache {
 }
 export interface CacheFields {
   len: string;
-  bar: DataAndKey;
+  pers: DataAndKey;
   line: Serie[];
   heat: DataAndKey;
   pie: PieChartObject[];
+  days: DataAndKey;
 }

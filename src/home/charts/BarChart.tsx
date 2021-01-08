@@ -6,41 +6,52 @@ import { axiesDefault, legendDefaults, margindefault } from "./consts";
 interface BarChartProps {
   data: DataObject[];
   keys?: string[];
-  indexBy?: string;
   xLabel?: string;
   yLabel?: string;
+  groupMode?: "grouped" | "stacked";
+  legend?: boolean;
 }
 
-const BarChart = ({ data, keys, indexBy, xLabel, yLabel }: BarChartProps) => (
+const BarChart = ({
+  data,
+  keys,
+  xLabel,
+  yLabel,
+  groupMode,
+  legend = true,
+}: BarChartProps) => (
   <ResponsiveBar
     data={data}
     keys={keys}
-    indexBy={indexBy}
     margin={margindefault}
     padding={0.3}
     colors={{ scheme: "dark2" }}
-    groupMode="grouped"
+    groupMode={groupMode}
     axisBottom={axiesDefault(xLabel, 36)}
     axisLeft={axiesDefault(yLabel, -40)}
     labelSkipWidth={20}
     labelSkipHeight={10}
-    legends={[
-      {
-        ...legendDefaults(),
-        dataFrom: "keys",
-        anchor: "right",
-        direction: "column",
-        symbolSize: 18,
-        effects: [
-          {
-            on: "hover",
-            style: {
-              itemOpacity: 1,
+    legends={
+      legend
+        ? [
+            {
+              ...legendDefaults(),
+              dataFrom: "keys",
+              anchor: "right",
+              direction: "column",
+              symbolSize: 18,
+              effects: [
+                {
+                  on: "hover",
+                  style: {
+                    itemOpacity: 1,
+                  },
+                },
+              ],
             },
-          },
-        ],
-      },
-    ]}
+          ]
+        : undefined
+    }
     animate={false}
   />
 );
