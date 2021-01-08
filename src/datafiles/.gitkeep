@@ -1,19 +1,26 @@
 Put all facebook msg folders in this folder
 
 You can run this python script to get a list of all folders 
-which can be put into `fileloader.ts`
+in  `chats.ts` which are imported into `fileloader.ts`
 
 
 import os
-# You will get the full list in alldirs.txt,
-# just remove that file itself and this one (helperfile.py),
-# and youre good to go
+
+# Run this script, and it will create a chats.ts file
+# It will export the consts with all the chats, just save
+# and run the app
+
 
 def main():
     names = os.listdir('src/datafiles')
-    with open("src/datafiles/alldirs.txt", "w") as f:
+    with open("src/datafiles/chats.ts", "w") as f:
+        f.write("export const chats: string[] = [ ")
         for n in names:
-            f.write(f"'{n}', \n")
+            print(n)
+            if n.find('.') == -1:
+                f.write(f"'{n}', \n")
+        f.write("] ")
+
 
 if __name__ == '__main__':
     main()

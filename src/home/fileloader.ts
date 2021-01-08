@@ -1,6 +1,5 @@
+import { chats } from "../datafiles/chats";
 import { FbMessage, FbMessageObject, RawFbFile, RawFbMessage } from "./types";
-
-const chats: string[] = [];
 
 const importDataFromFile = (chat: string, idx = 1) => {
   let content: RawFbFile = require(`../datafiles/${chat}/message_${idx}.json`);
