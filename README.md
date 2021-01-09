@@ -27,6 +27,8 @@ If you are missing something run
 $ (venv) pip3 install -r requirements.txt
 ```
 
+For analyzing your own data, you will need to navigate to `.gitkeep`, and read its contents 
+
 ## Running the Frontend
 
 ```cmd
@@ -60,5 +62,6 @@ This project uses [Nivo](https://nivo.rocks/components) as its graph library, se
 # Roadmap
 Well, its not so much a roadmap as things I would like to add to the repo 
 * I want to move more of the data formatting to python, and support some “durable” cashing 
+* Add more dynamic loading than "at start load everything"
 * I want to be able to generate fake data so that one can play with eh visualizations without real-life data
 
