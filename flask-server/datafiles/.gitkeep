@@ -1,5 +1,6 @@
 Put all facebook msg folders in this folder
 
+
 > subfolders like photos/gifs/ect.. can be deleted
 > The files that will be loaded are called message_n.json, 
     n = 1 at the first itteration
@@ -21,3 +22,6 @@ THe file must have the follwing json fields:
         },
     ...
 ]}
+
+NB! ONLY paste the folders of chats which you wish to analyze here,
+the app will load all chats at once 
