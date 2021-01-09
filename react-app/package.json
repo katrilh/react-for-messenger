@@ -2,6 +2,7 @@
   "name": "react-for-messenger",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:5000",
   "dependencies": {
     "@nivo/axes": "^0.67.0",
     "@nivo/bar": "^0.67.0",
