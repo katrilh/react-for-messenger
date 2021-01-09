@@ -1,5 +1,5 @@
-react-app/src/datafiles/*
-!react-app/src/datafiles/.gitkeep 
+flask-server/datafiles/*
+!flask-server/datafiles/.gitkeep 
 
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
