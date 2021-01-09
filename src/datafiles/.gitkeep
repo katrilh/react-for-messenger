@@ -6,6 +6,9 @@ in  `chats.ts` which are imported into `fileloader.ts`
 
 import os
 
+# For now, this is where you can list all copy all
+# facebook folders into fileloader.ts
+
 # Run this script, and it will create a chats.ts file
 # It will export the consts with all the chats, just save
 # and run the app
@@ -14,9 +17,9 @@ import os
 def main():
     names = os.listdir('src/datafiles')
     with open("src/datafiles/chats.ts", "w") as f:
-        f.write("export const chats: string[] = [ ")
+        f.write('export const chats: string[] = ['
+                )
         for n in names:
-            print(n)
             if n.find('.') == -1:
                 f.write(f"'{n}', \n")
         f.write("] ")
