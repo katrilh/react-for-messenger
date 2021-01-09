@@ -75,7 +75,7 @@ const GraphWrapper = ({ msgData, chatKey }: GraphWrapperProps) => {
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary"> Texts per person</Heading>
-        <BarChart groupMode="grouped" {...currentData.pers} />
+        <BarChart groupMode="grouped" theme="accent" {...currentData.pers} />
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary">Texts sent by day and hour</Heading>
@@ -83,7 +83,7 @@ const GraphWrapper = ({ msgData, chatKey }: GraphWrapperProps) => {
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary"> Days with texts per year</Heading>
-        <BarChart legend={false} {...currentData.days} />
+        <BarChart legend={false} theme="set2" {...currentData.days} />
       </Card>
       <Card {...charBoxDefaults}>
         <Heading color="secondary">Texts types sent</Heading>

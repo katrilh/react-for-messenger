@@ -1,4 +1,5 @@
 import { ResponsiveBar } from "@nivo/bar";
+import { OrdinalColorScaleConfig } from "@nivo/colors";
 import { charBoxDefaults } from "../consts";
 import { DataObject } from "../types";
 import { axiesDefault, legendDefaults, margindefault } from "./consts";
@@ -6,6 +7,7 @@ import { axiesDefault, legendDefaults, margindefault } from "./consts";
 interface BarChartProps {
   data: DataObject[];
   keys?: string[];
+  theme?: string;
   xLabel?: string;
   yLabel?: string;
   groupMode?: "grouped" | "stacked";
@@ -15,6 +17,7 @@ interface BarChartProps {
 const BarChart = ({
   data,
   keys,
+  theme = "dark2",
   xLabel,
   yLabel,
   groupMode,
@@ -25,7 +28,8 @@ const BarChart = ({
     keys={keys}
     margin={margindefault}
     padding={0.3}
-    colors={{ scheme: "dark2" }}
+    // @ts-ignore
+    colors={{ scheme: theme }}
     groupMode={groupMode}
     axisBottom={axiesDefault(xLabel, 36)}
     axisLeft={axiesDefault(yLabel, -40)}

@@ -3,6 +3,8 @@ import { dayHourInit } from "./charts/consts";
 import { monthNames } from "./consts";
 import { FbMessage, DataAndKey, DataObject, PieChartObject } from "./types";
 
+export const formatTimestamp = (ts_ms: number | Date): Date => new Date(ts_ms);
+
 export const range = (start: number, stop: number, step: number = 1) =>
   Array.from({ length: (stop - start) / step + 1 }, (_, i) => start + i * step);
 

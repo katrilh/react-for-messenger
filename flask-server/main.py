@@ -1,14 +1,16 @@
 # -*- coding: utf-8 -*-
-
-import time
+import os
 from flask import Flask
 from flask_cors import CORS, cross_origin
+
+from fileloader import load_all_chats
+
 
 app = Flask(__name__)
 CORS(app)
 
 
-@app.route('/hello')
-@cross_origin(origin='*')
-def say_hello_world():
-    return {'hi': "Hello åæø", 'time': time.time()}
+@app.route('/init')
+def init_load():
+    return load_all_chats(tuple(filter(lambda x: x != '.gitkeep',
+                                       os.listdir('datafiles'))))

@@ -14,7 +14,7 @@ const HeatMap = ({ data, keys }: HeatMapProps) => (
     margin={margindefault}
     padding={0.3}
     enableLabels={false}
-    colors="RdPu"
+    colors="YlGnBu"
     axisTop={{
       orient: "top",
       tickSize: 5,

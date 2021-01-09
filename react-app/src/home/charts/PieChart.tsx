@@ -16,9 +16,9 @@ const PieChart = ({ data }: PieChartProps) => (
     padAngle={1.5}
     cornerRadius={1}
     sortByValue
-    colors={{ scheme: "pink_yellowGreen" }}
+    colors={{ scheme: "pastel2" }}
     borderWidth={3}
-    borderColor={{ from: "color", modifiers: [["brighter", 0.2]] }}
+    borderColor={{ from: "color", modifiers: [["darker", 0.2]] }}
     radialLabel={(d) => `${d.label}: ${d.value}`}
     enableSliceLabels={false}
     legends={[

@@ -20,12 +20,13 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
       reverse: false,
     }}
     curve="monotoneX"
+    lineWidth={3}
     useMesh
-    colors={{ scheme: "dark2" }}
+    colors={{ scheme: "set2" }}
     yFormat=" >-"
     axisBottom={axiesDefault(xLabel, 36)}
     axisLeft={axiesDefault(yLabel, -40)}
-    pointSize={5}
+    pointSize={6}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}
     enableSlices="x"
