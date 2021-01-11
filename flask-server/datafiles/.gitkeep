@@ -20,8 +20,9 @@ THe file must have the follwing json fields:
         "timestamp_ms": <int>,
         "type": ""
         },
-    ...
-]}
+        ...
+    ]
+}
 
 NB! ONLY paste the folders of chats which you wish to analyze here,
 the app will load all chats at once 
