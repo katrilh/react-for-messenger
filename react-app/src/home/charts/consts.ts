@@ -3,7 +3,7 @@ import { Margin } from "@nivo/core";
 import { LegendProps } from "@nivo/legends";
 import { shortWeekdays } from "../consts";
 
-export const margindefault: Margin = {
+export const marginDefault: Margin = {
   top: 70,
   right: 50,
   bottom: 50,
@@ -24,7 +24,7 @@ export const legendDefaults = (): LegendProps => ({
   itemDirection: "left-to-right",
 });
 
-export const axiesDefault = (
+export const axisDefault = (
   label?: string,
   legendOffset?: number
 ): AxisProps => ({

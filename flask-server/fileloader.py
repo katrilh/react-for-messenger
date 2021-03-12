@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
-
-import os
+# import os
 import io
 import json
 from datetime import datetime
@@ -40,6 +39,7 @@ def load_all_chats(dir_lst):
 
 
 if __name__ == '__main__':
+    # cSPELL:DISABLE
     ll = ('achatof4bis_dfkd5fvq3w', 'adamgaidi_xxly7ve1kw', 'andershovden_l68rdhhhya', 'asmundaqissiaqklovstad_dvdpmcxrzw', 'bitbytebitwgshn_ofrky94row', 'dickallcock_cecxw9nkia', 'henriettekoolen_0dynefwwog', 'ingridfossa_8aene-1tpa', 'karantrening_qd5ds_u-fa', 'karolinelieholm_s8neosw_oa',
           'katrinelieholm_n549ayqjyw', 'melonpan_jg-5bu0law', 'miriamfinjord_wiovtcmhtg', 'oivindalbrigtsen_ldog2odg6a', 'semiprostrippers_90wc6tyxpw', 'soft_uvo_rcmpka', 'speedyblubblubdiblubandfast_6i19ka21va', 'thebestamongus_8kghvj9pww', 'xcom19_tq6epsbhpq', 'xcomtur_4q_1rvzshg')
 

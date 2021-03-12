@@ -1,6 +1,6 @@
 import { ResponsiveHeatMap } from "@nivo/heatmap";
 import { DataObject } from "../types";
-import { margindefault } from "./consts";
+import { marginDefault } from "./consts";
 
 interface HeatMapProps {
   data: DataObject[];
@@ -11,7 +11,7 @@ const HeatMap = ({ data, keys }: HeatMapProps) => (
   <ResponsiveHeatMap
     data={data}
     keys={keys}
-    margin={margindefault}
+    margin={marginDefault}
     padding={0.3}
     enableLabels={false}
     colors="YlGnBu"

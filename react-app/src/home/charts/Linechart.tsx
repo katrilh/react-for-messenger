@@ -1,5 +1,5 @@
 import { ResponsiveLine, Serie } from "@nivo/line";
-import { axiesDefault, margindefault, legendDefaults } from "./consts";
+import { axisDefault, marginDefault, legendDefaults } from "./consts";
 
 interface LineChartProps {
   data: Serie[];
@@ -10,7 +10,7 @@ interface LineChartProps {
 const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
   <ResponsiveLine
     data={data}
-    margin={margindefault}
+    margin={marginDefault}
     xScale={{ type: "point" }}
     yScale={{
       type: "linear",
@@ -24,8 +24,8 @@ const LineChart = ({ data, xLabel, yLabel }: LineChartProps) => (
     useMesh
     colors={{ scheme: "set2" }}
     yFormat=" >-"
-    axisBottom={axiesDefault(xLabel, 36)}
-    axisLeft={axiesDefault(yLabel, -40)}
+    axisBottom={axisDefault(xLabel, 36)}
+    axisLeft={axisDefault(yLabel, -40)}
     pointSize={6}
     pointBorderWidth={2}
     pointBorderColor={{ from: "serieColor" }}

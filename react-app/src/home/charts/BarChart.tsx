@@ -1,8 +1,6 @@
 import { ResponsiveBar } from "@nivo/bar";
-import { OrdinalColorScaleConfig } from "@nivo/colors";
-import { charBoxDefaults } from "../consts";
 import { DataObject } from "../types";
-import { axiesDefault, legendDefaults, margindefault } from "./consts";
+import { axisDefault, legendDefaults, marginDefault } from "./consts";
 
 interface BarChartProps {
   data: DataObject[];
@@ -26,13 +24,13 @@ const BarChart = ({
   <ResponsiveBar
     data={data}
     keys={keys}
-    margin={margindefault}
+    margin={marginDefault}
     padding={0.3}
     // @ts-ignore
     colors={{ scheme: theme }}
     groupMode={groupMode}
-    axisBottom={axiesDefault(xLabel, 36)}
-    axisLeft={axiesDefault(yLabel, -40)}
+    axisBottom={axisDefault(xLabel, 36)}
+    axisLeft={axisDefault(yLabel, -40)}
     labelSkipWidth={20}
     labelSkipHeight={10}
     legends={

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { ThemeProvider } from "styled-components";
 import { Box, Heading } from "rebass/styled-components";
 import { Select } from "@rebass/forms";
@@ -17,7 +17,7 @@ const Home = () => {
       fetch("/init")
         .then((res) => res.json())
         .then((data: Record<string, FbMessage[]>) => {
-          // This takes the longest - mirate all proccessing to backend?
+          // This takes the longest - migrate all processing to backend?
           for (let chat in data) {
             data[chat].map(
               ({ date }, i) => (data[chat][i].date = formatTimestamp(date))

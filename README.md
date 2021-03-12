@@ -6,11 +6,11 @@ Starting the virtual environment (venv)
 
 ```cmd
 $ cd flask-server
-$ venv\Scripts\activate @rem windows spesific
+$ venv\Scripts\activate @rem windows specific
 $ (venv) flask run
 ```
 
-In `flask-server/`, if `.env` does not exsist, create it with the followin content
+In `flask-server/`, if `.env` does not exist, create it with the following content
 
 ```cmd
 FLASK_APP=main.py
@@ -22,12 +22,14 @@ FLASK_ENV=development
 ```cmd
 $ (venv) pip3 list
 ```
-If you are missing something run 
+
+If you are missing something run
+
 ```
 $ (venv) pip3 install -r requirements.txt
 ```
 
-For analyzing your own data, you will need to navigate to `.gitkeep`, and read its contents 
+For analyzing your own data, you will need to navigate to `.gitkeep`, and read its contents
 
 ## Running the Frontend
 
@@ -45,7 +47,7 @@ If you cannot fix it, or just add `// @ts-ignore` over the line, but do keep thi
 
 ### Other commands
 
-As this project was created with "Create React App", scripts for testing (`yarn test`), bulding (`yarn build`)
+As this project was created with "Create React App", scripts for testing (`yarn test`), building (`yarn build`)
 and ejecting (`yarn eject`).
 
 ## Libraries
@@ -53,15 +55,16 @@ and ejecting (`yarn eject`).
 ### UI - Rebass
 
 This project uses [Rebass](https://rebassjs.org/getting-started) as its UI library, see their pages for how to use and style components.
-For now, when picking a componet, import it from `rebass/styled-components` (not just `rebass`)
+For now, when picking a component, import it from `rebass/styled-components` (not just `rebass`)
 
 ### Graphs- Nivo
 
 This project uses [Nivo](https://nivo.rocks/components) as its graph library, see their pages for how to use and style and format data.
 
 # Roadmap
-Well, its not so much a roadmap as things I would like to add to the repo 
-* I want to move more of the data formatting to python, and support some “durable” cashing 
-* Add more dynamic loading than "at start load everything"
-* I want to be able to generate fake data so that one can play with eh visualizations without real-life data
 
+Well, its not so much a roadmap as things I would like to add to the repo
+
+- I want to move more of the data formatting to python, and support some “durable” cashing
+- Add more dynamic loading than "at start load everything"
+- I want to be able to generate fake data so that one can play with eh visualizations without real-life data

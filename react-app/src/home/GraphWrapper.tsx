@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Box, Card, Heading } from "rebass/styled-components";
 import BarChart from "./charts/BarChart";
 import HeatMap from "./charts/HeatMap";
-import LineChart from "./charts/Linechart";
+import LineChart from "./charts/LineChart";
 import PieChart from "./charts/PieChart";
 import { cacheFieldsDefaults, charBoxDefaults } from "./consts";
 import {

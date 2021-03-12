@@ -1,6 +1,6 @@
 import { ResponsivePie } from "@nivo/pie";
 import { PieChartObject } from "../types";
-import { legendDefaults, margindefault } from "./consts";
+import { legendDefaults, marginDefault } from "./consts";
 
 interface PieChartProps {
   data: PieChartObject[];
@@ -9,7 +9,7 @@ interface PieChartProps {
 const PieChart = ({ data }: PieChartProps) => (
   <ResponsivePie
     data={data}
-    margin={margindefault}
+    margin={marginDefault}
     startAngle={-90}
     endAngle={90}
     innerRadius={0.4}
